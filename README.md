@@ -36,6 +36,75 @@ EKCD therefore should be understood as a **derivative and extensible companion o
 
 ---
 
+## Scope of EKCD
+
+At the current stage, EKCD is intended to host:
+
+1. additional datatype properties needed for ongoing dataset construction, including:
+   - `ekcd:occurrenceDate`
+   - `ekcd:startDate`
+   - `ekcd:endDate`
+   - `ekcd:originalDate`
+   - `ekcd:accessURL`
+
+2. operational annotation guidance for external mapping practice involving standard properties such as:
+   - `owl:sameAs`
+   - `skos:exactMatch`
+   - `skos:closeMatch`
+   - `skos:mappingRelation`
+
+3. ontology maintenance and extension work conducted personally by Dong Shin SEO outside the institutional EKC release line
+
+---
+
+## Design Principles
+
+EKCD follows these practical principles:
+
+- **continuity with EKC** wherever possible
+- **clear separation** between institutional and personal release lines
+- **reuse of standard vocabularies** instead of minting unnecessary local equivalents
+- **compatibility with spreadsheet-based data production**, especially through Protégé + Cellfie workflows
+- **separation of ABox data and external links datasets** for cleaner maintenance
+
+---
+
+## Namespace and Versioning
+
+- **Ontology IRI:** `http://dh.aks.ac.kr/ontologies/ekcd`
+- **Namespace URI:** `http://dh.aks.ac.kr/ontologies/ekcd#`
+- **Prefix:** `ekcd:`
+- **Version example:** `EKCD v0.9.7`
+
+Versioned snapshots may be stored separately from the working ontology file for stable citation and release management.
+
+---
+
+## Repository Structure
+
+ekcd-ontology/
+├─ README.md
+├─ CHANGELOG.md
+├─ LICENSE
+├─ .zenodo.json
+├─ /vocab/
+│  ├─ ekcd.ttl
+│  ├─ versions/
+│  │  └─ ekcd_v1_2_3.ttl
+│  └─ snapshots/
+│     └─ ekcd_2026-04-05_1.ttl
+├─ /docs/
+│  ├─ releases/
+│  │  └─ v1.2.3.md
+│  └─ changes/
+│     └─ v1.2.3-ontology-revision.md
+├─ /templates/
+│  └─ EKCD_Cellfie_Template.xlsx
+└─ /checksums/
+   └─ sha256.txt
+
+---
+
 ## License
 
 Shield: [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
