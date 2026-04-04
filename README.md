@@ -106,6 +106,21 @@ ekcd-ontology/
 ```
 ---
 
+## Data Production Workflow
+
+EKCD is intended to support a practical workflow such as:
+- maintain the TBox in **Protégé**
+- prepare researcher input in spreadsheet templates
+- transform spreadsheet data into RDF/OWL through **Cellfie**
+- generate:
+  - an ABox dataset
+  - a separate links dataset
+- validate and review outputs before public release
+
+This repository is therefore not only an ontology publication space, but also a maintenance base for ontology-driven dataset production.
+
+---
+
 ## License
 
 Shield: [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
