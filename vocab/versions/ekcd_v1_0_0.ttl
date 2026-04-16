@@ -1,0 +1,1558 @@
+@prefix : <http://dh.aks.ac.kr/ontologies/ekc#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix edm: <http://www.europeana.eu/schemas/edm/> .
+@prefix ekc: <http://dh.aks.ac.kr/ontologies/ekc#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix ekcd: <http://dh.aks.ac.kr/ontologies/ekcd#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@base <http://dh.aks.ac.kr/ontologies/ekc#> .
+
+<http://dh.aks.ac.kr/ontologies/ekcd> rdf:type owl:Ontology ;
+                                       owl:versionIRI <http://dh.aks.ac.kr/ontologies/ekcd_v1> ;
+                                       owl:imports <http://dh.aks.ac.kr/ontologies/ekc-2025> ;
+                                       dc:creator <https://orcid.org/0009-0007-4477-6547> ,
+                                                  "Dong Shin SEO"@en ,
+                                                  "서동신"@ko ;
+                                       dc:description "A personal derivative ontology extending the EKC line for date-oriented datatype properties, local usage guidance for semantic mapping predicates, and project-level semantic extensions in Korean cultural heritage knowledge modeling."@en ,
+                                                      "한국 문화유산 지식 모델링을 위해 EKC 계열을 확장한 개인 파생 온톨로지로서, 날짜 중심 datatype property, 시맨틱 매핑 표준 속성의 로컬 사용지침, 프로젝트 수준의 의미론적 확장을 제공한다."@ko ;
+                                       dc:publisher "The Center for Digital Humanities at the Academy of Korean Studies"@en ,
+                                                    "한국학중앙연구원 디지털인문학연구소"@ko ;
+                                       dc:title "EKCD Ontology: EKC-derived personal extension ontology"@en ,
+                                                "EKCD 온톨로지: EKC 파생 개인 확장 온톨로지"@ko ;
+                                       dcterms:issued "2026-04-16"^^xsd:date ;
+                                       dcterms:license <https://creativecommons.org/licenses/by-sa/4.0/> ;
+                                       dcterms:modified "2026-04-16"^^xsd:date ;
+                                       dcterms:replaces <http://dh.aks.ac.kr/ontologies/ekc-2022-alpha2507> ;
+                                       dcterms:source <https://github.com/dongshins/EKC_ontology> ;
+                                       rdfs:comment "The EKC Ontology is a domain-specific vocabulary for modeling relationships among historical facts, source documents, persons, and locations in Korean cultural heritage. Initially developed during the Encyclopedic Archives of Korean Culture digitization project at the Academy of Korean Studies and refined through various digital humanities projects."@en ;
+                                       rdfs:seeAlso <https://github.com/dongshins/ekcd-ontology> ,
+                                                    "https://dh.aks.ac.kr/~hanyang2/wiki/index.php/Ontology:EKC_2022" ,
+                                                    "https://github.com/dongshins/EKC_ontology" ,
+                                                    "https://github.com/dongshins/EKC_ontology_advanced" ;
+                                       owl:priorVersion <http://dh.aks.ac.kr/ontologies/ekc-2022-alpha2507> ;
+                                       owl:versionInfo "EKCD v1.0.0"@en ;
+                                       dcat:contactPoint <https://github.com/dongshins> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/contributor
+dc:contributor rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/creator
+dc:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+dc:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/publisher
+dc:publisher rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/issued
+dcterms:issued rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+dcterms:license rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/modified
+dcterms:modified rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/replaces
+dcterms:replaces rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/source
+dcterms:source rdf:type owl:AnnotationProperty ;
+               dc:description "This property is intended to be used with non-literal values. The described resource may be derived from the related resource in whole or in part. Best practice is to identify the related resource by means of a URI or a string conforming to a formal identification system."@en ;
+               rdfs:label "source"@en ;
+               skos:definition "A related resource from which the described resource is derived."@en .
+
+
+###  http://www.w3.org/2002/07/owl#versionIRI
+owl:versionIRI rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+skos:definition rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#example
+skos:example rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#note
+skos:note rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#scopeNote
+skos:scopeNote rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/dcat#contactPoint
+dcat:contactPoint rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://dh.aks.ac.kr/ontologies/ekc#A1
+ekc:A1 rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#A2
+ekc:A2 rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#A3
+ekc:A3 rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#A4
+ekc:A4 rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#AR
+ekc:AR rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#CL
+ekc:CL rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#CO
+ekc:CO rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#E1
+ekc:E1 rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#E2
+ekc:E2 rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#E3
+ekc:E3 rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#E4
+ekc:E4 rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#FO
+ekc:FO rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#HR
+ekc:HR rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#NM
+ekc:NM rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#OB
+ekc:OB rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#P1
+ekc:P1 rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#P2
+ekc:P2 rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#RE
+ekc:RE rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#ST
+ekc:ST rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#TM
+ekc:TM rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#XR
+ekc:XR rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#administrates
+ekc:administrates rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#annotator
+ekc:annotator rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#appearsIn
+ekc:appearsIn rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#archiveHolding
+ekc:archiveHolding rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#bibliography
+ekc:bibliography rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#calligrapher
+ekc:calligrapher rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#commemorates
+ekc:commemorates rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#constructor
+ekc:constructor rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#cooks
+ekc:cooks rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#creatorPresumed
+ekc:creatorPresumed rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#curates
+ekc:curates rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#depicts
+ekc:depicts rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#documents
+ekc:documents rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#doner
+ekc:doner rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#editor
+ekc:editor rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#enshrines
+ekc:enshrines rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#founder
+ekc:founder rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#goesWith
+ekc:goesWith rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#hasAdoptedHeir
+ekc:hasAdoptedHeir rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#hasAffiliation
+ekc:hasAffiliation rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#hasAppointee
+ekc:hasAppointee rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#hasAsset
+ekc:hasAsset rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#hasBranchTemple
+ekc:hasBranchTemple rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#hasBrother
+ekc:hasBrother rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#hasBrotherInLaw
+ekc:hasBrotherInLaw rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#hasChineseExplanation
+ekc:hasChineseExplanation rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#hasConcubine
+ekc:hasConcubine rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#hasContextualElement
+ekc:hasContextualElement rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#hasCousin
+ekc:hasCousin rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#hasDaughter
+ekc:hasDaughter rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#hasDaughterInLaw
+ekc:hasDaughterInLaw rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#hasDescendant
+ekc:hasDescendant rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#hasDisciple
+ekc:hasDisciple rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#hasDrawing
+ekc:hasDrawing rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#hasEnglishExplanation
+ekc:hasEnglishExplanation rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#hasEpitaph
+ekc:hasEpitaph rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#hasExhibition
+ekc:hasExhibition rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#hasExhibitionAt
+ekc:hasExhibitionAt rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#hasFather
+ekc:hasFather rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#hasFatherInLaw
+ekc:hasFatherInLaw rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#hasGrandDaughter
+ekc:hasGrandDaughter rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#hasGrandson
+ekc:hasGrandson rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#hasHermitage
+ekc:hasHermitage rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#hasHistoricalSetting
+ekc:hasHistoricalSetting rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#hasHusband
+ekc:hasHusband rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#hasIngredient
+ekc:hasIngredient rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#hasInscription
+ekc:hasInscription rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#hasMaster
+ekc:hasMaster rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#hasMother
+ekc:hasMother rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#hasMotherInLaw
+ekc:hasMotherInLaw rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#hasNewName
+ekc:hasNewName rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#hasOldName
+ekc:hasOldName rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#hasOwner
+ekc:hasOwner rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#hasParticipant
+ekc:hasParticipant rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#hasPerformance
+ekc:hasPerformance rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#hasPhoto
+ekc:hasPhoto rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#hasReferenceNote
+ekc:hasReferenceNote rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#hasSister
+ekc:hasSister rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#hasSisterInLaw
+ekc:hasSisterInLaw rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#hasSon
+ekc:hasSon rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#hasSonInLaw
+ekc:hasSonInLaw rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#hasStele
+ekc:hasStele rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#hasStupa
+ekc:hasStupa rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#hasSubject
+ekc:hasSubject rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#hasTemporalElement
+ekc:hasTemporalElement rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#hasText
+ekc:hasText rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#hasVersion
+ekc:hasVersion rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#hasVirtualParticipant
+ekc:hasVirtualParticipant rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#hasWife
+ekc:hasWife rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#includes
+ekc:includes rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#inscriber
+ekc:inscriber rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isAdministratedBy
+ekc:isAdministratedBy rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isAdoptedHeirOf
+ekc:isAdoptedHeirOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isAffinalKinOf
+ekc:isAffinalKinOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isAnnotatorOf
+ekc:isAnnotatorOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isAvailableAt
+ekc:isAvailableAt rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isAwarded
+ekc:isAwarded rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isBirthPlaceOf
+ekc:isBirthPlaceOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isBrotherOf
+ekc:isBrotherOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isCalligrapherOf
+ekc:isCalligrapherOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isCausedBy
+ekc:isCausedBy rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isConceptionPlaceOf
+ekc:isConceptionPlaceOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isConcubineOf
+ekc:isConcubineOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isConstructorOf
+ekc:isConstructorOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isContributorOf
+ekc:isContributorOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isCreatorOf
+ekc:isCreatorOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isCurrentLocationOf
+ekc:isCurrentLocationOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isCurrentlySituatedOn
+ekc:isCurrentlySituatedOn rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isDaughterInLawOf
+ekc:isDaughterInLawOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isDaughterOf
+ekc:isDaughterOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isDeathPlaceOf
+ekc:isDeathPlaceOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isDepictedIn
+ekc:isDepictedIn rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isDescendantOf
+ekc:isDescendantOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isDesignatedAs
+ekc:isDesignatedAs rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isDiscipleOf
+ekc:isDiscipleOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isDocumentedIn
+ekc:isDocumentedIn rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isEnshrinedIn
+ekc:isEnshrinedIn rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isFatherInLawOf
+ekc:isFatherInLawOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isFatherOf
+ekc:isFatherOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isFellowOf
+ekc:isFellowOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isFormerlocationOf
+ekc:isFormerlocationOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isFounderOf
+ekc:isFounderOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isGarnishedWith
+ekc:isGarnishedWith rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isGrandDaughterOf
+ekc:isGrandDaughterOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isGrandsonOf
+ekc:isGrandsonOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isHeldAt
+ekc:isHeldAt rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isHeldBy
+ekc:isHeldBy rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isHeldFor
+ekc:isHeldFor rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isHusbandOf
+ekc:isHusbandOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isInfluencedBy
+ekc:isInfluencedBy rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isInscriberOf
+ekc:isInscriberOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isKindOf
+ekc:isKindOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isLineageKinOf
+ekc:isLineageKinOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isLocatedIn
+ekc:isLocatedIn rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isMadeOf
+ekc:isMadeOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isMasterOf
+ekc:isMasterOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isMemberOf
+ekc:isMemberOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isMentionedBy
+ekc:isMentionedBy rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isMentionedIn
+ekc:isMentionedIn rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isMotherInLawOf
+ekc:isMotherInLawOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isMotherOf
+ekc:isMotherOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isNamedAfter
+ekc:isNamedAfter rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isNamedBy
+ekc:isNamedBy rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isNamesakeOf
+ekc:isNamesakeOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isNear
+ekc:isNear rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isNewNameOf
+ekc:isNewNameOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isOfficialPostOf
+ekc:isOfficialPostOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isOldNameOf
+ekc:isOldNameOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isOperatedIn
+ekc:isOperatedIn rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isOwnerOf
+ekc:isOwnerOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isPasserOf
+ekc:isPasserOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isPerformedAt
+ekc:isPerformedAt rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isPerformedBy
+ekc:isPerformedBy rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isPerformedIn
+ekc:isPerformedIn rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isPlacentaChamberOf
+ekc:isPlacentaChamberOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isPostedIn
+ekc:isPostedIn rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isPreviousInSequenceTo
+ekc:isPreviousInSequenceTo rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isPreviouslySituatedOn
+ekc:isPreviouslySituatedOn rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isProducedBy
+ekc:isProducedBy rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isProducedIn
+ekc:isProducedIn rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isProvenanceOf
+ekc:isProvenanceOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isProvidedIn
+ekc:isProvidedIn rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isPublisherOf
+ekc:isPublisherOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isReconstructorOf
+ekc:isReconstructorOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isReferencedFrom
+ekc:isReferencedFrom rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isRenovatorOf
+ekc:isRenovatorOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isRightsHolderOf
+ekc:isRightsHolderOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isServedIn
+ekc:isServedIn rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isServedOn
+ekc:isServedOn rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isServedTo
+ekc:isServedTo rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isSisterOf
+ekc:isSisterOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isSiteOf
+ekc:isSiteOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isSonInLawOf
+ekc:isSonInLawOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isSonOf
+ekc:isSonOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isSteleOf
+ekc:isSteleOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isStoredIn
+ekc:isStoredIn rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isStupaOf
+ekc:isStupaOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isSubjectOf
+ekc:isSubjectOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isTombOf
+ekc:isTombOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isTombstoneOf
+ekc:isTombstoneOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isTranslatorOf
+ekc:isTranslatorOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isUsedIn
+ekc:isUsedIn rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isVictimOf
+ekc:isVictimOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isWifeOf
+ekc:isWifeOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isWornBy
+ekc:isWornBy rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isWornIn
+ekc:isWornIn rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#isWriterOf
+ekc:isWriterOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#leads
+ekc:leads rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#livesIn
+ekc:livesIn rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#mentions
+ekc:mentions rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#mightBeRelatedTo
+ekc:mightBeRelatedTo rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#onlineReference
+ekc:onlineReference rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#owner
+ekc:owner rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#participatesIn
+ekc:participatesIn rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#plays
+ekc:plays rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#prepares
+ekc:prepares rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#reconstructor
+ekc:reconstructor rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#renovator
+ekc:renovator rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#serves
+ekc:serves rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#servesAs
+ekc:servesAs rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#servesTemporarilyAs
+ekc:servesTemporarilyAs rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#textReference
+ekc:textReference rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#timeline
+ekc:timeline rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#translator
+ekc:translator rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#virtuallyParticipatesIn
+ekc:virtuallyParticipatesIn rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#wasBuriedIn
+ekc:wasBuriedIn rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#wasExecutedAt
+ekc:wasExecutedAt rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#wasOrdainedBy
+ekc:wasOrdainedBy rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#wasPosthumouslyPromotedTo
+ekc:wasPosthumouslyPromotedTo rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#wasPreceptorOf
+ekc:wasPreceptorOf rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#wears
+ekc:wears rdf:type owl:ObjectProperty .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#writer
+ekc:writer rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/dc/terms/contributor
+dcterms:contributor rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/dc/terms/creator
+dcterms:creator rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/dc/terms/hasPart
+dcterms:hasPart rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/dc/terms/isPartOf
+dcterms:isPartOf rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/dc/terms/isReferencedBy
+dcterms:isReferencedBy rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/dc/terms/provenance
+dcterms:provenance rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/dc/terms/publisher
+dcterms:publisher rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/dc/terms/references
+dcterms:references rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/dc/terms/rightsHolder
+dcterms:rightsHolder rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/dc/terms/type
+dcterms:type rdf:type owl:ObjectProperty .
+
+
+###  http://www.europeana.eu/schemas/edm/currentLocation
+edm:currentLocation rdf:type owl:ObjectProperty .
+
+
+###  http://www.europeana.eu/schemas/edm/formerLocation
+edm:formerLocation rdf:type owl:ObjectProperty .
+
+
+###  http://www.europeana.eu/schemas/edm/happenedAt
+edm:happenedAt rdf:type owl:ObjectProperty .
+
+
+###  http://www.europeana.eu/schemas/edm/isDerivativeOf
+edm:isDerivativeOf rdf:type owl:ObjectProperty .
+
+
+###  http://www.europeana.eu/schemas/edm/isNextInSequenceTo
+edm:isNextInSequenceTo rdf:type owl:ObjectProperty .
+
+
+###  http://www.europeana.eu/schemas/edm/isRelatedTo
+edm:isRelatedTo rdf:type owl:ObjectProperty .
+
+
+###  http://www.europeana.eu/schemas/edm/isShownAt
+edm:isShownAt rdf:type owl:ObjectProperty ;
+              skos:scopeNote "EKCD 운용(로컬) 시 object property로서 설명 페이지, 랜딩 페이지, 뷰어 페이지 등 도착 페이지 성격의 WebResource 노드로 연결하고, 실제 URL은 대상 노드의 ekcd:accessURL에 기록합니다."@ko .
+
+
+###  http://www.europeana.eu/schemas/edm/isShownBy
+edm:isShownBy rdf:type owl:ObjectProperty ;
+              skos:scopeNote "EKCD 운용(로컬) 시 object property로서, 직접 활용 가능한 이미지·미디어 또는 임베드 가능한 뷰어 성격의 WebResource/Multimedia 노드로 연결하고, 실제 URL은 대상 노드의 ekcd:accessURL에 기록합니다."@ko .
+
+
+###  http://www.europeana.eu/schemas/edm/isSuccessorOf
+edm:isSuccessorOf rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/2002/07/owl#sameAs
+owl:sameAs rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf ekc:CO ;
+           rdf:type owl:SymmetricProperty ,
+                    owl:TransitiveProperty ;
+           dc:description "두 URI가 동일한 개체(같은 resource/individual)를 가리킨다. 단순 유사성, 상호참조, 개념 대응에는 사용하지 않는다."@ko ;
+           rdfs:label "sameAs"@en ;
+           skos:example """EKCD에서의 운용(로컬) 예시 : <http://dh.aks.ac.kr/iri/ekc#조선_영조> - <https://www.wikidata.org/entity/Q485009>
+※ EKC에서와는 다름에 유의"""@ko ;
+           skos:note "EKCD 운용(로컬) 시 : 엄격한 동일개체 관계 ※ EKC에서와 다름에 유의"@ko ;
+           skos:scopeNote "엄격한 동일성이 확실할 때만 사용. 개념/용어의 대응에는 skos:exactMatch 또는 skos:closeMatch를 우선 검토할 것. ※ EKC에서와는 다름에 유의"@ko .
+
+
+###  http://www.w3.org/2004/02/skos/core#closeMatch
+skos:closeMatch rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf skos:mappingRelation ;
+                rdf:type owl:SymmetricProperty ;
+                dc:description "~와 유사하다 ※ 다른 개념체계(어휘집)의 자원과 근접하게 대응한다. 일부 정보검색 맥락에서는 상호대체 가능하지만, 완전 동일개체를 뜻하지는 않는다."@ko ;
+                rdfs:label "closeMatch"@en ;
+                skos:example "개념 A(EKC) - 개념 B(외부 어휘) ※ 부분적 상호대체 가능"@ko ;
+                skos:note "유사한 관계(근접 대응)"@ko ;
+                skos:scopeNote "주로 Concept/Index 간의 외부 어휘 매핑에 사용. 엄격한 동일성이 아니므로 owl:sameAs 대용으로 사용하지 말 것."@ko .
+
+
+###  http://www.w3.org/2004/02/skos/core#exactMatch
+skos:exactMatch rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf skos:closeMatch ;
+                rdf:type owl:SymmetricProperty ,
+                         owl:TransitiveProperty ;
+                dc:description "다른 개념체계(어휘집)의 자원과 정밀하게 대응한다. 넓은 정보검색 맥락에서 상호대체 가능하지만, OWL의 엄격한 동일성(owl:sameAs)과는 구별한다."@ko ;
+                rdfs:label "exactMatch"@en ;
+                skos:example "개념 A(EKC) - 개념 B(외부 어휘) ※ 광범위한 상호대체 가능"@ko ;
+                skos:note "정밀 대응 관계"@ko ;
+                skos:scopeNote "주로 Concept/Index 간의 외부 어휘 매핑에 사용. 완전 동일 개체가 확실할 때만 owl:sameAs를 사용."@ko .
+
+
+###  http://www.w3.org/2004/02/skos/core#mappingRelation
+skos:mappingRelation rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf ekc:CO ;
+                     dc:description "상이한 개념체계(어휘집) 사이의 대응 관계를 묶는 상위 속성"@ko ;
+                     rdfs:label "mappingRelation"@en ;
+                     skos:example "개념 A(EKC) - 개념 B(외부 어휘)"@ko ;
+                     skos:note "외부 개념체계 매핑의 상위 관계"@ko ;
+                     skos:scopeNote "주로 Concept/Index 간의 외부 링크 정리에 사용"@ko .
+
+
+###  http://xmlns.com/foaf/0.1/knows
+foaf:knows rdf:type owl:ObjectProperty .
+
+
+###  http://xmlns.com/foaf/0.1/member
+foaf:member rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://dh.aks.ac.kr/ontologies/ekcd#accessURL
+ekcd:accessURL rdf:type owl:DatatypeProperty ;
+               rdfs:range xsd:anyURI ;
+               dc:description "Dereferenceable web address of a WebResource/Multimedia individual."@en ,
+                              "WebResource/Multimedia 개체의 실제 접근 웹주소. EKCD 운용(로컬)에서 edm:isShownBy와 edm:isShownAt는 object property로 유지되되, 구체적 URL은 대상 WebResource/Multimedia 노드에 ekcd:accessURL(data property)로 기록합니다."@ko ;
+               rdfs:label "access URL"@en ,
+                          "접근 URL"@ko ;
+               skos:example "https://example.org/images/001.jpg 또는 https://example.org/items/001 등"@ko .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekcd#endDate
+ekcd:endDate rdf:type owl:DatatypeProperty ;
+             rdfs:range xsd:date ;
+             dc:description "기간 사건의 정규화된 종료일. 입력은 YYYY, YYYY-MM, YYYY-MM-DD 형식을 사용한다."@ko ;
+             rdfs:label "end date"@en ,
+                        "종료일"@ko .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekcd#occurrenceDate
+ekcd:occurrenceDate rdf:type owl:DatatypeProperty ;
+                    rdfs:range xsd:date ;
+                    dc:description "Date on which an event, activity, or historical occurrence took place. If the full date is unknown, month and year (YYYY-MM) or just year (YYYY) may be used."@en ,
+                                   "단일 시점의 사건·행위·역사적 사실이 발생한 날짜. 전체 날짜를 알 수 없는 경우 월과 연도(YYYY-MM) 또는 연도(YYYY)만 사용할 수 있다. 기간 사건의 경우에는 :startDate와 :endDate를 우선 사용하고, 원사료형 날짜 표기는 :originalDate에 가능한 한에서 기록한다."@ko ;
+                    rdfs:label "occurrenceDate"@en ,
+                               "발생일"@ko ;
+                    skos:definition "특정 사건·행위·역사적 사실의 단일 발생 시점"@ko .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekcd#originalDate
+ekcd:originalDate rdf:type owl:DatatypeProperty ;
+                  rdfs:range rdfs:Literal ;
+                  dc:description "사료에 나타난 날짜 표현을 가능한 한 원형에 가깝게 기록하는 값. 예: 음력 1795년 윤2월 9일~16일"@ko ;
+                  rdfs:label "original date expression"@en ,
+                             "원사료형 날짜"@ko .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekcd#startDate
+ekcd:startDate rdf:type owl:DatatypeProperty ;
+               rdfs:range xsd:date ;
+               dc:description "기간 사건의 정규화된 시작일. 입력은 YYYY, YYYY-MM, YYYY-MM-DD 형식을 사용한다."@ko ;
+               rdfs:label "start date"@en ,
+                          "시작일"@ko .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://dh.aks.ac.kr/ontologies/ekc#Actor
+ekc:Actor rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#Architecture
+ekc:Architecture rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#Bibliography
+ekc:Bibliography rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#Clothing
+ekc:Clothing rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#Concept
+ekc:Concept rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#Event
+ekc:Event rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#Food
+ekc:Food rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#Heritage
+ekc:Heritage rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#Index
+ekc:Index rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#Multimedia
+ekc:Multimedia rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#Object
+ekc:Object rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#Place
+ekc:Place rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#Record
+ekc:Record rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#Story
+ekc:Story rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#Text
+ekc:Text rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#WebResource
+ekc:WebResource rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#Work
+ekc:Work rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#개념용어
+ekc:개념용어 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#건축
+ekc:건축 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#건축부품
+ekc:건축부품 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#고문헌
+ekc:고문헌 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#고지명
+ekc:고지명 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#관서
+ekc:관서 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#관직
+ekc:관직 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#국가
+ekc:국가 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#국보
+ekc:국보 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#그림
+ekc:그림 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#근대문헌
+ekc:근대문헌 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#근대유적지
+ekc:근대유적지 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#금석문
+ekc:금석문 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#기관
+ekc:기관 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#기념물
+ekc:기념물 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#기사
+ekc:기사 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#기장
+ekc:기장 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#논문
+ekc:논문 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#단체
+ekc:단체 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#단행본
+ekc:단행본 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#도면
+ekc:도면 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#동영상
+ekc:동영상 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#등록문화재
+ekc:등록문화재 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#명문銘文
+ekc:명문銘文 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#무용
+ekc:무용 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#무형
+ekc:무형 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#문학
+ekc:문학 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#문헌
+ekc:문헌 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#물품
+ekc:물품 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#뮤지컬
+ekc:뮤지컬 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#미술
+ekc:미술 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#번역문
+ekc:번역문 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#보물
+ekc:보물 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#복식
+ekc:복식 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#복장
+ekc:복장 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#분류주제
+ekc:분류주제 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#사건
+ekc:사건 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#사적
+ekc:사적 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#사진
+ekc:사진 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#상차림
+ekc:상차림 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#소장처
+ekc:소장처 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#스토리라인
+ekc:스토리라인 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#시각자료
+ekc:시각자료 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#시도문화재
+ekc:시도문화재 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#식재료
+ekc:식재료 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#에피소드
+ekc:에피소드 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#연극
+ekc:연극 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#영화
+ekc:영화 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#원문
+ekc:원문 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#웹자원색인
+ekc:웹자원색인 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#유적지
+ekc:유적지 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#음식
+ekc:음식 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#음악
+ekc:음악 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#의례
+ekc:의례 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#인물
+ekc:인물 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#인물군
+ekc:인물군 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#자연지명
+ekc:자연지명 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#장소
+ekc:장소 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#전시
+ekc:전시 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#제도
+ekc:제도 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#제수
+ekc:제수 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#조형
+ekc:조형 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#지도
+ekc:지도 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#직역
+ekc:직역 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#참고
+ekc:참고 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#참고문헌색인
+ekc:참고문헌색인 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#탑본
+ekc:탑본 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#해설
+ekc:해설 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#행사
+ekc:행사 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#행정지명
+ekc:행정지명 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#현대문헌
+ekc:현대문헌 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#현판
+ekc:현판 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#호칭
+ekc:호칭 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#화폐
+ekc:화폐 rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#3D_모델
+<http://dh.aks.ac.kr/ontologies/ekc#3D_모델> rdf:type owl:Class .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#3D_지도
+<http://dh.aks.ac.kr/ontologies/ekc#3D_지도> rdf:type owl:Class .
+
+
+###  http://purl.org/vocommons/voaf#Vocabulary
+voaf:Vocabulary rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://dh.aks.ac.kr/ontologies/ekc
+<http://dh.aks.ac.kr/ontologies/ekc> rdf:type owl:NamedIndividual ;
+                                     dcterms:publisher <https://dh.aks.ac.kr/> .
+
+
+###  http://dh.aks.ac.kr/ontologies/ekc#
+ekc: rdf:type owl:NamedIndividual ,
+              voaf:Vocabulary .
+
+
+###  https://dh.aks.ac.kr/
+<https://dh.aks.ac.kr/> rdf:type owl:NamedIndividual .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
